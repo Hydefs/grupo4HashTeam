@@ -16,11 +16,11 @@ public class ControladorArticulo {
     private ServicioArticulo servicioArticulo;
 
     @GetMapping("/")
-    public String index(Model model){
-        try{
+    public String index(Model model) {
+        try {
             List<Articulo> articulos = this.servicioArticulo.findAllByNoOculto();
             return "views/index";
-        }catch(Exception e){
+        } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
             return "error";
         }

@@ -1,137 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>Dinorah</title>
-</head>
-<body>
-    <nav th:fragment="nav_bar" class="nav_bar">
-        <div class="nav_main_container">
-            <div class="nav_main_subcontainer">
-                <div class="nav_options">
-                    <ul>
-                        <li>Crear cuenta
-                        <li> | </li>    
-                        <li>Iniciar sesión
-                    </ul>
-                </div>
-            </div>
-            <div class="nav_main_subcontainer">
-                <div class="nav_options">
-                    <ul>
-                        <li>🔎
-                        <li> | </li>    
-                        <li>🛒 0 - $0,000
-                    </ul>
-                </div>
-            </div> 
-        </div>
-        <div class="nav_secondary_container">
-            <div class="nav_secondary_container_title">
-                <h1>Dinorah<br>Indumentaria</h1>
-            </div>
-            <div class="nav_secondary_subcontainer">
-                <div class="nav_options">
-                    <ul>
-                        <li>PRODUCTOS
-                        <li> | </li>
-                        <li>BLOG
-                        <li> | </li>
-                        <li>CONTACTO
-                        <li> | </li>
-                        <li>QUIENES SOMOS
-                </div>
+<nav th:fragment="nav_bar" class="nav_bar">
+    <div class="nav_main_container">
+        <div class="nav_main_subcontainer">
+            <div class="nav_options">
+                <ul>
+                    <li>Crear cuenta
+                    <li> |</li>
+                    <li>Iniciar sesión
+                </ul>
             </div>
         </div>
-    </nav> 
-    <style>
-        body{
-            background: #8c5a69;
-        }
-        .nav_bar{
-            /* background: #dfaca955; */
-        }
-        .nav_main_container{
-            padding: 10px;
-            display: flex;
-            flex-wrap: nowrap;
-            width: 100%;
-            background: #dfaca955;
-            /* justify-content: space-around; */
-            
-        }
-
-        .nav_main_subcontainer{
-            display:flex;
-            width: 50%;
-        }
-
-        .nav_main_subcontainer:last-child{
-            justify-content: end;
-        }
-
-        /*.nav_options{
-            width: 50%;
-        }*/
-
-        .nav_options ul{
-            list-style: none;
-            display:inline-block;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav_options ul li{
-            display: inline;
-            color: #552323;
-        }
-
-        .nav_secondary_container{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-        }
-
-        .nav_secondary_container_title{
-            margin-right: 10px;
-        }
-        .nav_secondary_subcontainer{
-            margin-left: 10px;
-        }
-
-        .nav_secondary_container_title h1{
-            color: #dfaca9;
-            font-family: "Amiri", Arial, Helvetica, sans-serif;
-        }
-
-        .nav_secondary_container{
-            align-items: center;
-        }
-
-        .nav_secondary_container ul{
-            background: #dfaca9;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 7px 7px 0px #552323 ;
-        }
-
-        /* .nav_secondary_container ul::after{
-
-        } */
-
-        .nav_secondary_container ul li:nth-child(even){
-            margin-left: 5px;
-            margin-right: 5px;
-        }
-        .nav_secondary_container ul li{
-            color: #552323;
-        }
-        
-    </style>
-</body>
-</html>
+        <div class="nav_main_subcontainer">
+            <div class="nav_options">
+                <ul>
+                    <li>🔎
+                    <li> |</li>
+                    <li>🛒 0 - $0,000
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="nav_secondary_container">
+        <div class="nav_secondary_container_title">
+            <h1>Dinorah<br>Indumentaria</h1>
+        </div>
+        <div class="nav_secondary_subcontainer">
+            <div class="nav_options">
+                <ul>
+                    <li>PRODUCTOS
+                    <li> |</li>
+                    <li>BLOG
+                    <li> |</li>
+                    <li>CONTACTO
+                    <li> |</li>
+                    <li>QUIENES SOMOS
+            </div>
+        </div>
+    </div>
+</nav>

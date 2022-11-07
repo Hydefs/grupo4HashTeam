@@ -1,0 +1,43 @@
+.carousel-inner{
+    overflow: visible !important;
+}
+
+.carousel-container{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    height: 250px;
+    background: #dfaca9;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px #552323;
+}
+
+.carousel-item-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*flex-direction: column;*/
+}
+
+.carousel-item-text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-item-text h2{
+    font-family: 'Raleway', sans-serif;
+    color: #552323;
+    font-size: 3rem;
+}
+
+.carousel-item-text h3{
+    font-family: 'Montserrat', sans-serif;
+    color: #552323;
+}
+
+.carousel-item-image img{
+    width: 150px;
+    padding: 10px;
+}
