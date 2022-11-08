@@ -1,7 +1,7 @@
 package com.dinorahIndumentaria.services;
 
-import com.dinorahIndumentaria.entities.articulos.Articulo;
-import com.dinorahIndumentaria.repositories.RepositorioArticulo;
+import com.dinorahIndumentaria.entities.articulos.Categoria;
+import com.dinorahIndumentaria.repositories.RepositorioCategoria;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,10 +10,10 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ServicioArticulo implements ServicioBase<Articulo> {
+public class ServicioCategoria implements ServicioBase<Categoria> {
 
     @Autowired
-    private RepositorioArticulo repositorio;
+    private RepositorioCategoria repositorio;
 
     /*
     * Ver si es conveniente devolver un Map con un error llegado al caso
@@ -21,10 +21,10 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
      */
     @Override
     @Transactional
-    public List<Articulo> findAll() throws Exception {
+    public List<Categoria> findAll() throws Exception {
         try{
-            List<Articulo> articulos = this.repositorio.findAll();
-            return articulos;
+            List<Categoria> categorias = this.repositorio.findAll();
+            return categorias;
         }catch(Exception e){
             throw new Exception(e.getMessage());
         }
@@ -32,9 +32,9 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
 
     @Override
     @Transactional
-    public Articulo findById(long id) throws Exception {
+    public Categoria findById(long id) throws Exception {
         try{
-            Optional<Articulo> opt = this.repositorio.findById(id);
+            Optional<Categoria> opt = this.repositorio.findById(id);
             return opt.get();
         }catch(Exception e){
             throw new Exception(e.getMessage());
@@ -43,10 +43,10 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
 
     @Override
     @Transactional
-    public Articulo saveOne(Articulo entity) throws Exception {
+    public Categoria saveOne(Categoria entity) throws Exception {
         try{
-            Articulo articulo = this.repositorio.save(entity);
-            return articulo;
+            Categoria categoria = this.repositorio.save(entity);
+            return categoria;
         }catch (Exception e){
             throw new Exception(e.getMessage());
         }
@@ -56,12 +56,12 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
 
     @Override
     @Transactional
-    public Articulo updateOne(Articulo entity, long id) throws Exception {
+    public Categoria updateOne(Categoria entity, long id) throws Exception {
         try {
-            Optional<Articulo> opt = this.repositorio.findById(id);
-            Articulo articulo = opt.get();
-            articulo = this.repositorio.save(entity);
-            return articulo;
+            Optional<Categoria> opt = this.repositorio.findById(id);
+            Categoria categoria = opt.get();
+            categoria = this.repositorio.save(entity);
+            return categoria;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }
@@ -71,11 +71,11 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
     @Transactional
     public boolean deleteById(long id) throws Exception {
         try {
-            Optional<Articulo> opt = this.repositorio.findById(id);
+            Optional<Categoria> opt = this.repositorio.findById(id);
             if (!opt.isEmpty()) {
-                Articulo articulo = opt.get();
-                articulo.setEliminado(!articulo.isEliminado());
-                this.repositorio.save(articulo);
+                Categoria categoria = opt.get();
+                categoria.setEliminado(!categoria.isEliminado());
+                this.repositorio.save(categoria);
             } else {
                 throw new Exception();
             }
@@ -89,11 +89,11 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
     @Transactional
     public boolean disableById(long id) throws Exception {
         try {
-            Optional<Articulo> opt = this.repositorio.findById(id);
+            Optional<Categoria> opt = this.repositorio.findById(id);
             if (!opt.isEmpty()) {
-                Articulo articulo = opt.get();
-                articulo.setOculto(!articulo.isOculto());
-                this.repositorio.save(articulo);
+                Categoria categoria = opt.get();
+                categoria.setOculto(!categoria.isOculto());
+                this.repositorio.save(categoria);
             } else {
                 throw new Exception();
             }
@@ -104,9 +104,9 @@ public class ServicioArticulo implements ServicioBase<Articulo> {
     }
 
     @Transactional
-    public List<Articulo> findAllByNoOculto() throws Exception{
+    public List<Categoria> findAllByNoOculto() throws Exception{
         try {
-            List<Articulo> entities = this.repositorio.findAllByNoOculto();
+            List<Categoria> entities = this.repositorio.findAllByNoOculto();
             return entities;
         } catch (Exception e) {
             throw new Exception(e.getMessage());
